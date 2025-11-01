@@ -2,12 +2,18 @@ package com.student.management.studentservice.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "students", uniqueConstraints = @UniqueConstraint(columnNames = "roll_number"))
 public class Student {
 
+    // Getters & Setters
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -39,15 +45,4 @@ public class Student {
         this.dateOfBirth = dateOfBirth;
     }
 
-    // Getters & Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getRollNumber() { return rollNumber; }
-    public void setRollNumber(String rollNumber) { this.rollNumber = rollNumber; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-    public LocalDate getDateOfBirth() { return dateOfBirth; }
-    public void setDateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth = dateOfBirth; }
 }

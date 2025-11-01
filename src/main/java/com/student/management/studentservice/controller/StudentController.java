@@ -6,12 +6,14 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
 import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/students")
+@CrossOrigin(origins = "http://localhost:4200") // ✅ Angular frontend ke liye CORS allow
 public class StudentController {
 
     private final StudentService service;
